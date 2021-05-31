@@ -155,10 +155,13 @@ clip_text = true
 [node name="onestep" type="Button" parent="."]
 pause_mode = 2
 visible = false
-margin_left = 305.0
-margin_top = 514.0
-margin_right = 585.0
-margin_bottom = 600.0
+anchor_left = 0.435
+anchor_top = 1.0
+anchor_right = 0.435
+anchor_bottom = 1.0
+margin_left = -140.44
+margin_top = -86.0
+margin_right = 139.56
 text = "One step"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -174,8 +177,8 @@ __meta__ = {
 
 [node name="pop" type="Popup" parent="."]
 pause_mode = 2
-margin_right = 1024.0
-margin_bottom = 600.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -183,22 +186,32 @@ __meta__ = {
 [node name="Panel" type="Panel" parent="pop"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 2.37842
+margin_bottom = 2.37842
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ok" type="Button" parent="pop"]
-margin_left = 493.521
-margin_top = 529.197
-margin_right = 553.521
-margin_bottom = 584.197
+anchor_left = 0.482
+anchor_top = 0.882
+anchor_right = 0.541
+anchor_bottom = 0.974
+margin_left = -0.0470276
+margin_top = -0.00299072
+margin_right = -0.463013
+margin_bottom = -0.203003
 text = "ок"
 
 [node name="Label" type="Label" parent="pop"]
-margin_left = 70.0
-margin_top = 58.0
-margin_right = 974.0
-margin_bottom = 492.0
+anchor_left = 0.068
+anchor_top = 0.097
+anchor_right = 0.951
+anchor_bottom = 0.82
+margin_left = 0.367996
+margin_top = -0.200001
+margin_right = 0.175964
+margin_bottom = -3.05176e-05
 text = "Minetest Technic uranium calculator.
 Copyright ghaydn 2021, GPLv3,
 Icon: LGPLv2,
