@@ -1,0 +1,218 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://UbuntuMono-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = SubResource( 1 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://UbuntuMono-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = SubResource( 4 )
+
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
+
+[node name="Back" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 3 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="base" type="SpinBox" parent="."]
+pause_mode = 2
+anchor_left = 0.447
+anchor_top = 0.09
+anchor_right = 0.754
+anchor_bottom = 0.189
+margin_left = 0.272003
+margin_top = -3.8147e-06
+margin_right = -0.0960083
+margin_bottom = -0.399994
+max_value = 1e+06
+value = 990.0
+allow_greater = true
+
+[node name="label" type="Label" parent="."]
+anchor_left = 0.083
+anchor_top = 0.101
+anchor_right = 0.434
+anchor_bottom = 0.183
+margin_left = -0.209381
+margin_top = -0.0409813
+margin_right = 0.366608
+margin_bottom = -0.24099
+text = "Starting lumps:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Calc" type="Button" parent="."]
+pause_mode = 2
+anchor_left = 0.441
+anchor_top = 0.314
+anchor_right = 0.687
+anchor_bottom = 0.405
+margin_left = -2.74112
+margin_top = -0.154282
+margin_right = -2.64514
+margin_bottom = 0.245712
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="counter" type="Label" parent="."]
+anchor_left = 0.019
+anchor_top = 0.413
+anchor_right = 0.975
+anchor_bottom = 0.778
+margin_left = -0.456001
+margin_top = 0.199997
+margin_right = -0.400024
+margin_bottom = 0.199951
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stop" type="Button" parent="."]
+pause_mode = 2
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -86.0
+margin_right = 305.0
+text = "Pause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exti" type="Button" parent="."]
+pause_mode = 2
+anchor_left = 0.993
+anchor_top = 1.0
+anchor_right = 0.993
+anchor_bottom = 1.0
+margin_left = -270.132
+margin_top = -87.7401
+margin_right = -0.131714
+margin_bottom = 2.25989
+text = "EXIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dust" type="Label" parent="."]
+anchor_left = 0.634
+anchor_top = 0.205
+anchor_right = 0.892
+anchor_bottom = 0.287
+margin_left = 0.402527
+margin_top = 0.174461
+margin_right = 0.21051
+margin_bottom = -0.025528
+text = "(1980 dust)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stacks" type="Label" parent="."]
+anchor_left = 0.252
+anchor_top = 0.205
+anchor_right = 0.51
+anchor_bottom = 0.286
+margin_left = -1.54407
+margin_top = 2.40466
+margin_right = -1.73608
+margin_bottom = 2.80466
+text = "(10 stacks)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="centrifuges" type="Label" parent="."]
+anchor_top = 0.778
+anchor_right = 1.0
+anchor_bottom = 0.83
+margin_top = 0.199951
+margin_bottom = -3.05176e-05
+theme = SubResource( 6 )
+clip_text = true
+
+[node name="onestep" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 305.0
+margin_top = 514.0
+margin_right = 585.0
+margin_bottom = 600.0
+text = "One step"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="help" type="Button" parent="."]
+margin_right = 56.0
+margin_bottom = 55.0
+text = "?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pop" type="Popup" parent="."]
+pause_mode = 2
+visible = true
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="Panel" type="Panel" parent="pop"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ok" type="Button" parent="pop"]
+margin_left = 493.521
+margin_top = 529.197
+margin_right = 553.521
+margin_bottom = 584.197
+text = "ок"
+
+[node name="Label" type="Label" parent="pop"]
+margin_left = 70.0
+margin_top = 58.0
+margin_right = 974.0
+margin_bottom = 492.0
+text = "Minetest Technic uranium calculator.
+Copyright ghaydn 2021, GPLv3,
+Icon: LGPLv2
+Font: Ubuntu Font License
+Godot Engine: godotengine.org
+
+https://github.com/
+Ghaydn/minetest-uranium-calc"
+autowrap = true
+
+[connection signal="value_changed" from="base" to="." method="_on_base_value_changed"]
+[connection signal="pressed" from="Calc" to="." method="_on_Calc_pressed"]
+[connection signal="pressed" from="stop" to="." method="_on_stop_pressed"]
+[connection signal="pressed" from="exti" to="." method="_on_exti_pressed"]
+[connection signal="pressed" from="onestep" to="." method="_on_onestep_pressed"]
+[connection signal="pressed" from="help" to="." method="_on_help_pressed"]
+[connection signal="gui_input" from="pop" to="." method="_on_pop_gui_input"]
+[connection signal="gui_input" from="pop/Panel" to="." method="_on_pop_gui_input"]
+[connection signal="pressed" from="pop/ok" to="." method="_on_ok_pressed"]
