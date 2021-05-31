@@ -8,6 +8,7 @@ var total_product: int = 0
 var total0: int = 0
 var unprocessed: int = 0
 var peak: int = 0
+var approx_time = 0
 onready var calc = $Calc
 onready var stop = $stop
 onready var count_display = $counter
@@ -29,7 +30,7 @@ func one_step():
 	current_step += 1
 	last_step = new_step
 	draw_step(new_step)
-	count_display.text = "Step №" + String(current_step) + \
+	count_display.text = "Step №" + String(current_step) + ", approx. " + String(approx_time / 3600) + " centrifuge hours" + \
 	".\n\rProduced " + String(total_product) + "(" + String(total_product / 5) + \
 	" rods) and " + String(total0) + " waste.\n\rUnprocessed: " + \
 	String(unprocessed) + ", peak: " + String(peak) + "."
@@ -87,6 +88,8 @@ func monitor(step: Array):
 	for s in step:
 		unprocessed += s
 		if s > peak: peak = s
+		if s > 0 and s < STAGES-1:
+			approx_time = approx_time + gn(step[s] * 5)
 	unprocessed -= step[0]
 	unprocessed -= step[STAGES-1]
 
@@ -108,6 +111,7 @@ func start_new_calc(value: int):
 	current_step = 0
 	total_product = 0
 	total0 = 0
+	approx_time = 0
 	calculating = true
 	draw_step(last_step)
 
