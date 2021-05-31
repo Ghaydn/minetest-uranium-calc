@@ -174,9 +174,11 @@ __meta__ = {
 
 [node name="pop" type="Popup" parent="."]
 pause_mode = 2
-visible = true
 margin_right = 1024.0
 margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Panel" type="Panel" parent="pop"]
 anchor_right = 1.0
@@ -199,8 +201,8 @@ margin_right = 974.0
 margin_bottom = 492.0
 text = "Minetest Technic uranium calculator.
 Copyright ghaydn 2021, GPLv3,
-Icon: LGPLv2
-Font: Ubuntu Font License
+Icon: LGPLv2,
+Font: Ubuntu Font License,
 Godot Engine: godotengine.org
 
 https://github.com/
